@@ -1,5 +1,6 @@
-from pathlib import Path
 from typing import Sequence
+
+from pathlib import Path
 
 import rich
 import rich.syntax
