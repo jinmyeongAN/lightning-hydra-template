@@ -106,6 +106,9 @@ def run(cfg: DictConfig) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     log.info(f"Instantiating Tokenizer <{cfg.data._target_}>")
     raw_datasets = hydra.utils.instantiate(cfg.data)
 
+    os.environ["WANDB_PROJECT"] = data_args.task_name  # name your W&B project
+    os.environ["WANDB_LOG_MODEL"] = "checkpoint"  # log all model checkpoints
+
     # Setup logging
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",

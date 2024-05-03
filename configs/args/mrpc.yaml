@@ -39,3 +39,4 @@ training_args:
   weight_decay: 0
   num_train_epochs: 1
   overwrite_output_dir: True
+  report_to: wandb
